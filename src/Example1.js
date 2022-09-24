@@ -45,32 +45,32 @@ export default function Example1(props) {
               <tr className='text-left'><td className='pt-[4px] font-[500] px-[2px]'>justify-content:</td>
               <td disabled={false}>
                   <button className="py-2 px-1">
-                    <span id="center" onClick={(e)=>{handleJc(e)}} className='px-1 bg-blue-500 hover:bg-blue-700 text-white font-semibold  border border-blue-700 rounded'>
+                    <span id="center" onClick={(e)=>{handleJc(e)}} className={` ${jc==="center"?'bg-blue-700 text-white':""} px-1 font-semibold  border border-blue-700 hover:bg-blue-400 rounded`}>
                       center
                     </span>
                   </button>,
                   <button className="py-2 px-1">
-                    <span id="end" onClick={(e)=>{handleJc(e)}} className='px-1 bg-blue-500 hover:bg-blue-700 text-white font-semibold  border border-blue-700 rounded'>
+                    <span id="end" onClick={(e)=>{handleJc(e)}} className={` ${jc==="end"?'bg-blue-700 text-white':""} px-1 font-semibold  border border-blue-700 hover:bg-blue-400 rounded`}>
                       flex-end
                     </span>
                   </button>,
                   <button className="py-2 px-1">
-                    <span id='start' onClick={(e)=>{handleJc(e)}} className='px-1 bg-blue-500 hover:bg-blue-700 text-white font-semibold  border border-blue-700 rounded'>
+                    <span id='start' onClick={(e)=>{handleJc(e)}} className={` ${jc==="start"?'bg-blue-700 text-white':""} px-1 font-semibold  border border-blue-700 hover:bg-blue-400 rounded`}>
                       flex-start
                     </span>
                   </button>,
                   <button className="py-2 px-1">
-                    <span id="around" onClick={(e)=>{handleJc(e)}} className='px-1 bg-blue-500 hover:bg-blue-700 text-white font-semibold  border border-blue-700 rounded' title=" items are evenly distributed in the line with equal space around them">
+                    <span id="around" onClick={(e)=>{handleJc(e)}} className={` ${jc==="around"?'bg-blue-700 text-white':""} px-1 font-semibold  border border-blue-700 hover:bg-blue-400 rounded`} title=" items are evenly distributed in the line with equal space around them">
                       space-around
                     </span>
                   </button>,
                   <button className="py-2 px-1">
-                    <span id="between" onClick={(e)=>{handleJc(e)}} className='px-1 bg-blue-500 hover:bg-blue-700 text-white font-semibold  border border-blue-700 rounded' title="All available space is placed between the first and last items, pushing both items to opposite edges of the container">
+                    <span id="between" onClick={(e)=>{handleJc(e)}} className={` ${jc==="between"?'bg-blue-700 text-white':""} px-1 font-semibold  border border-blue-700 hover:bg-blue-400 rounded`} title="All available space is placed between the first and last items, pushing both items to opposite edges of the container">
                       space-between
                     </span>
                   </button>,
                   <button className="py-2 px-1">
-                    <span id="evenly" onClick={(e)=>{handleJc(e)}} className='px-1 bg-blue-500 hover:bg-blue-700 text-white font-semibold  border border-blue-700 rounded' title='Gives the equal space in x-axis for the flex items'>
+                    <span id="evenly" onClick={(e)=>{handleJc(e)}} className={` ${jc==="evenly"?'bg-blue-700 text-white':""} px-1 font-semibold  border border-blue-700 hover:bg-blue-400 rounded`} title='Gives the equal space in x-axis for the flex items'>
                       space-evenly
                     </span>
                   </button>
@@ -79,22 +79,22 @@ export default function Example1(props) {
 
               <tr className='text-left'><td className='pt-[4px] font-[500] px-[2px]'>align-items:</td>
                   <button className="py-2 px-1">
-                    <span id="baseline" onClick={(e)=>{handleAi(e)}} className='px-1 bg-blue-500 hover:bg-blue-700 text-white font-semibold  border border-blue-700 rounded' title="the flexbox items will align themselves in order to have the baseline of their text align along a horizontal line.">
+                    <span id="baseline" onClick={(e)=>{handleAi(e)}} className={`${ai==="baseline"?'hover: bg-blue-700 text-white':''} hover:bg-blue-400 px-1 font-semibold  border border-blue-700 rounded`} title="the flexbox items will align themselves in order to have the baseline of their text align along a horizontal line.">
                       baseline
                     </span>
                   </button>,
                   <button className="py-2 px-1">
-                    <span id="start" onClick={(e)=>{handleAi(e)}} className='px-1 bg-blue-500 hover:bg-blue-700 text-white font-semibold  border border-blue-700 rounded' title="The flexbox items are aligned at the start of the cross axis. By default, the cross axis is vertical. This means the flexbox items will be aligned vertically at the top.">
+                    <span id="start" onClick={(e)=>{handleAi(e)}} className={`${ai==="start"?'hover: bg-blue-700 text-white':''} hover:bg-blue-400 px-1 font-semibold  border border-blue-700 rounded`} title="The flexbox items are aligned at the start of the cross axis. By default, the cross axis is vertical. This means the flexbox items will be aligned vertically at the top.">
                       flex-start
                     </span>
                   </button>,
                   <button className="py-2 px-1">
-                    <span id="center" onClick={(e)=>{handleAi(e)}} className='px-1 bg-blue-500 hover:bg-blue-700 text-white font-semibold  border border-blue-700 rounded' title="This means the flexbox items will be centered vertically.">
+                    <span id="center" onClick={(e)=>{handleAi(e)}} className={`${ai==="center"?'hover: bg-blue-700 text-white':''} hover:bg-blue-400 px-1 font-semibold  border border-blue-700 rounded`} title="This means the flexbox items will be centered vertically.">
                       center
                     </span>
                   </button>,
                   <button className="py-2 px-1">
-                    <span id="end" onClick={(e)=>{handleAi(e)}} className='px-1 bg-blue-500 hover:bg-blue-700 text-white font-semibold  border border-blue-700 rounded' title="This means the flexbox items will be centered vertically.">
+                    <span id="end" onClick={(e)=>{handleAi(e)}} className={`${ai==="end"?'hover: bg-blue-700 text-white':''} hover:bg-blue-400 px-1 font-semibold  border border-blue-700 rounded`} title="This means the flexbox items will be centered vertically.">
                       flex-end
                     </span>
                   </button>
